@@ -946,7 +946,7 @@ table.schedule-table tr.highlight td { background: var(--primary-light); }
   font-family: var(--font-heading); font-weight: 800; font-size: 1.1rem;
   margin-bottom: 0.85rem; color: var(--primary); display: flex; align-items: center; gap: 0.4rem;
 }
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
 .cal-day-name {
   font-size: 0.68rem; font-weight: 800; font-family: var(--font-mono);
   color: var(--text-muted); text-align: center; padding-bottom: 0.3rem; text-transform: uppercase;
@@ -954,11 +954,12 @@ table.schedule-table tr.highlight td { background: var(--primary-light); }
 
 /* MAXIMIZED DAY NUMBERS FILLING THE CELL (REQS 3) */
 .cal-date-cell {
-  aspect-ratio: 1; min-height: 60px; border: 1px solid var(--border-color);
+  min-height: 60px; min-width: 0; border: 1px solid var(--border-color);
   border-radius: var(--radius-sm); background: var(--bg-card); padding: 0.2rem;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   cursor: pointer; transition: all var(--transition-main); position: relative; font-family: var(--font-mono);
 }
+@media (min-width: 640px) { .cal-date-cell { aspect-ratio: 1; } }
 .cal-date-cell span {
   font-size: clamp(1.4rem, 4.5vw, 1.9rem); font-weight: 800; line-height: 1; margin: auto 0;
   display: flex; align-items: center; justify-content: center;
@@ -968,6 +969,11 @@ table.schedule-table tr.highlight td { background: var(--primary-light); }
 .cal-date-cell.today { background: var(--accent); color: #ffffff; font-weight: 800; border-color: var(--accent); }
 .cal-date-cell.holiday { background: var(--danger-light); color: var(--danger); }
 .cal-date-cell.important { background: var(--success-light); color: var(--success); }
+@media (max-width: 420px) {
+  .cal-grid { gap: 3px; }
+  .cal-date-cell { min-height: 52px; padding: 0.15rem; }
+  .cal-date-cell span { font-size: 1.2rem; }
+}
 
 .cal-dots {
   position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
@@ -1171,7 +1177,7 @@ table.schedule-table tr.highlight td { background: var(--primary-light); }
 
   <!-- ── SCHEDULE PANEL ── -->
   <section id="schedulePanel" class="view-panel active">
-    <div class="toolbar-card">
+    <div class="toolbar-card">  
       <div class="toolbar-top">
         <div class="search-box">
           <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>

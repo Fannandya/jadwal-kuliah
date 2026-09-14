@@ -113,7 +113,7 @@
         "kelas": "B",
         "jam": "07.50-09.40",
         "ruang": "F6.202",
-        "dosen": "Miss Kiki"
+        "dosen": "TW"
       },
       {
         "kode": "TI704",
@@ -121,7 +121,7 @@
         "kelas": "C",
         "jam": "09.40-11.30",
         "ruang": "F6.202",
-        "dosen": "Miss Kiki"
+        "dosen": "TW"
       }
     ],
     "Sabtu": [
@@ -131,7 +131,7 @@
         "kelas": "A",
         "jam": "07.00-08.40",
         "ruang": "F6.202",
-        "dosen": "Miss Kiki"
+        "dosen": "TW"
       },
       {
         "kode": "TI704",
@@ -139,7 +139,7 @@
         "kelas": "D",
         "jam": "07.00-08.40",
         "ruang": "F6.203",
-        "dosen": "Miss Kiki"
+        "dosen": "TW"
       },
       {
         "kode": "TI704",
@@ -147,7 +147,7 @@
         "kelas": "E",
         "jam": "08.50-10.30",
         "ruang": "F6.203",
-        "dosen": "Miss Kiki"
+        "dosen": "TW"
       }
     ]
   }
